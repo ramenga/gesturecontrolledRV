@@ -1,3 +1,8 @@
+/*Code for the Controller
+  Inputs are the MPU6050(Accel,Gyro),HMC8553(Magnetometer), and mode switches
+  Accel data, magnetometer data and mode data are stored in an array trx[]
+  For each loop,array trx[] is sent to the RV through NRF24L01
+*/
 #include <Wire.h> 
 #include <Adafruit_Sensor.h>
 #include <Adafruit_HMC5883_U.h>

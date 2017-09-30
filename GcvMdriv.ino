@@ -1,4 +1,9 @@
- void forward(void)
+/*Basic functionality code for driving the wheels
+  Receives code from serial input and drives the motors(4 wheels)
+  The output of this program is fed to the input of four H-Bridges
+  Speed control is also achieved by using PWM on Enable inputs of H-Bridges
+*/
+void forward(void)
 {  digitalWrite(3,LOW);
   digitalWrite(11,LOW);
   digitalWrite(7,LOW);

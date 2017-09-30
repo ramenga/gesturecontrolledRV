@@ -78,7 +78,6 @@ void setup()
 }
 void loop()
 {
-//int ak1=0;  
    
 
   int incoming = Serial.available();

@@ -5,8 +5,7 @@
 #include <SPI.h>//RF24 Comonents
 #include <nRF24L01.h>
 #include <RF24.h>
-Dept. of ECE                                                                                                                                                           17
-Gesture Controlled Robotic Vehicle
+
 #define CE_PIN   9
 #define CSN_PIN 10
 #define OUTPUT_READABLE_YAWPITCHROLL

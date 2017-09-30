@@ -1,8 +1,10 @@
-#include <Wire.h> #include <Adafruit_Sensor.h>
+#include <Wire.h> 
+#include <Adafruit_Sensor.h>
 #include <Adafruit_HMC5883_U.h>
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
-#include <SPI.h>//RF24 Comonents
+#include <SPI.h>
+//RF24 Components
 #include <nRF24L01.h>
 #include <RF24.h>
 
@@ -96,8 +98,7 @@ void setup(void)
 void loop()
 {
   if (!dmpReady) return; //Dmp fail halt
-Dept. of ECE                                                                                                                                                           21
-Gesture Controlled Robotic Vehicle
+
   //Block For Magnetometer
   sensors_event_t event;
   mag.getEvent(&event);
@@ -144,8 +145,6 @@ Gesture Controlled Robotic Vehicle
     /*       Serial.print("ypr\t");
      Serial.print(yprDeg[0]);
      Serial.print("\t");
-Dept. of ECE                                                                                                                                                           23
-Gesture Controlled Robotic Vehicle
      Serial.print(yprDeg[1]);
      Serial.print("\t");
      Serial.println(yprDeg[2]);
@@ -153,8 +152,8 @@ Gesture Controlled Robotic Vehicle
     //blinkState = !blinkState;
     //digitalWrite(LED_PIN, blinkState);
   }
-  trx[0] = headingDegrees;
-  trx[1] = yprDeg[0];
+  trx[0] = headingDegrees; //Compass Heading
+  trx[1] = yprDeg[0]; 
   trx[2] = yprDeg[1];
   trx[3] = yprDeg[2];
   trx[4] = digitalRead(7);

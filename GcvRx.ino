@@ -1,3 +1,8 @@
+/* Code for the receiver and the robotic vehicle
+   Receives array from Tx through NRF24l01
+   Uses another Arduino to drive motors, communicated through serial COM
+   Also takes input from Magnetometer to compare heading with Transmitter
+*/
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
@@ -7,8 +12,6 @@
 //--Magnetic sensor prerequisites
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
-Dept. of ECE                                                                                                                                                           24
-Gesture Controlled Robotic Vehicle
 #include <Adafruit_HMC5883_U.h>
 // NOTE: the "LL" at the end of the constant is "LongLong" type
 const uint64_t pipe = 0xE8E8F0F0E1LL; // Define the transmit pipe
@@ -46,8 +49,8 @@ void setup()   /****** SETUP: RUNS ONCE ******/
   {
     /* There was a problem detecting the HMC5883 ... check your connections */
     while(1){
-      
-      int brightness = 0;    // how bright the LED is
+      //Using fading LED for notify
+      int brightness = 0;
       int fadeAmount = 5;
       analogWrite(3, brightness);    
   // change the brightness for next time through the loop:
@@ -195,8 +198,6 @@ else if(Mode2 == 0)
       {
         if*(hadingDiff<-3)
         {
-Dept. of ECE                                                                                                                                                           31
-Gesture Controlled Robotic Vehicle
           digitalWrite(trightPin,HIGH);
           delay(50);
           digitalWrite(trightPin,LOW);

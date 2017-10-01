@@ -2,6 +2,8 @@
   Receives code from serial input and drives the motors(4 wheels)
   The output of this program is fed to the input of four H-Bridges
   Speed control is also achieved by using PWM on Enable inputs of H-Bridges
+  Sketch for driving a robotic vehicle with four wheels, with each wheel having a separate motor
+  Differential steering principles used
 */
 void forward(void)
 {  digitalWrite(3,LOW);
